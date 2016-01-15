@@ -1,0 +1,18 @@
+{
+  "name": "rotten-node",
+  "version": "0.0.1",
+  "description": "A Node.js wrapper for Rotten Tomatoes API",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "Rottent",
+    "Tomatoes",
+    "API",
+    "Node.js",
+    "Javascript"
+  ],
+  "author": "Julien <dev.vialajulien@gmail.com> (https://github.com/mr-wildcard)",
+  "license": "ISC"
+}
