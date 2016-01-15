@@ -2,7 +2,7 @@
   "name": "rotten-node",
   "version": "0.0.1",
   "description": "A Node.js wrapper for Rotten Tomatoes API",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "node test.js"
   },
@@ -14,5 +14,9 @@
     "Javascript"
   ],
   "author": "Julien <dev.vialajulien@gmail.com> (https://github.com/mr-wildcard)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.10.0",
+    "babel-preset-es2015": "^6.3.13"
+  }
 }
