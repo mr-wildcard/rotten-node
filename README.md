@@ -1,1 +1,66 @@
-# Rotten Tomatoes API Wrapper
+Simple, promise based, client for Rotten Tomatoes API.
+
+## Installation
+```
+$ npm i --save rotten-node
+```
+
+## Usage
+
+Each of these calls return a Promise :
+```javascript
+import RT from 'rotten-node';
+
+var api = new RT({ apiKey: YOUR_API_KEY });
+
+api.movie(MOVIE_ID).infos()
+  .then(result => console.log(result))
+  .catch(error => console.error('An error occured while getting movie infos : %s', error));
+```
+
+Available data :
+```javascript
+// List movies
+api.lists.movies.boxOffice();
+api.lists.movies.inTheaters();
+api.lists.movies.opening();
+api.lists.movies.upcoming();
+
+// List DVDs
+api.lists.dvds.topRentals();
+api.lists.dvds.currentReleases();
+api.lists.dvds.newReleases();
+api.lists.dvds.upcoming();
+
+// Movie infos
+const MOVIE_ID = 12989;
+
+api.movie(MOVIE_ID).infos();
+api.movie(MOVIE_ID).cast();
+api.movie(MOVIE_ID).clips();
+api.movie(MOVIE_ID).reviews();
+api.movie(MOVIE_ID).similar();
+api.movie(MOVIE_ID).alias();
+
+// TODO search
+```
+
+Passing params to queries : ([available params](http://developer.rottentomatoes.com/io-docs]))
+```javascript
+api.lists.movies.boxOffice({
+  limit: 16,
+  country: 'us'
+});
+```
+
+Using callback :
+```javascript
+api.lists.movies.boxOffice(null, function(error, result) {
+  // jawad here
+});
+```
+
+## Develop
+```
+$ npm run dev
+```
