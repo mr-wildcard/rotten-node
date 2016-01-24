@@ -2,9 +2,10 @@
   "name": "rotten-node",
   "version": "0.0.1",
   "description": "A Node.js wrapper for Rotten Tomatoes API",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "dev": "nodemon --watch src --exec rollup -c"
   },
   "keywords": [
     "Rottent",
@@ -17,6 +18,13 @@
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.10.0",
-    "babel-preset-es2015": "^6.3.13"
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-preset-stage-2": "^6.3.13",
+    "rollup-plugin-babel": "^2.3.9"
+  },
+  "dependencies": {
+    "qs": "^6.0.2",
+    "querystring": "^0.2.0",
+    "superagent": "^1.7.1"
   }
 }
