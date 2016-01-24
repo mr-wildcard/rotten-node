@@ -1,1 +1,1 @@
-module.export = require('./lib/rotten');
+module.exports = require('./lib');
