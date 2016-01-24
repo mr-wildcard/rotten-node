@@ -4,6 +4,7 @@
   "description": "A Node.js wrapper for Rotten Tomatoes API",
   "main": "lib/index.js",
   "scripts": {
+    "preinstall": "npm i -g nodemon rollup",
     "test": "node test.js",
     "dev": "nodemon --watch src --exec rollup -c"
   },
