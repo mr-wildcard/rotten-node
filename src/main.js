@@ -14,7 +14,7 @@ module.exports = class RottenTomatoes {
     this.buildURL = buildEndpoint(apiBaseURL, this.config.apiKey);
   }
 
-  get list() {
+  get lists() {
     return {
       movies: {
         boxOffice:  (params, cb) => APICall(this.buildURL('lists/movies/box_office.json', params), cb),
