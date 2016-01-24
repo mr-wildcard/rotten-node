@@ -40,7 +40,7 @@ module.exports = class RottenTomatoes {
     const slugStart = `movies/${movieId}`;
 
     return {
-      infos:   (cb) => APICall(this.buildURL(`${slugStart}.jsn`), cb),
+      infos:   (cb) => APICall(this.buildURL(`${slugStart}.json`), cb),
       cast:    (cb) => APICall(this.buildURL(`${slugStart}/cast.json`), cb),
       clips:   (cb) => APICall(this.buildURL(`${slugStart}/clips.json`), cb),
       reviews: (cb) => APICall(this.buildURL(`${slugStart}/reviews.json`), cb),
