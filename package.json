@@ -21,11 +21,10 @@
   "devDependencies": {
     "ava": "^0.10.0",
     "babel-preset-es2015-rollup": "^1.1.1",
-    "babel-preset-stage-2": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "rollup-plugin-babel": "^2.3.9"
   },
   "dependencies": {
-    "querystring": "^0.2.0",
     "superagent": "^1.7.1"
   }
 }
