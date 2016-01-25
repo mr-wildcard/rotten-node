@@ -33,7 +33,7 @@ module.exports = class RottenTomatoes {
 
   movie(movieId) {
 
-    if (!movieId) {
+    if (!movieId || !+movieId) {
       throw new Error('RottenTomatoes: invalid movie ID.');
     }
 
