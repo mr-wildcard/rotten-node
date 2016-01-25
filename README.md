@@ -19,7 +19,7 @@ api.movie(12989).infos()
   .catch(error => console.error('An error occured while getting movie infos : %s', error));
 ```
 
-Available data :
+Available functions :
 ```javascript
 // List movies
 api.lists.movies.boxOffice();
