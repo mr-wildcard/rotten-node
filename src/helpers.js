@@ -1,5 +1,5 @@
+import qs from 'querystring';
 import http from 'superagent';
-import qs from 'qs';
 
 export const buildEndpoint = (baseUrl, key) => (path, params = {}) => `${baseUrl}/${path}?${qs.stringify({ ...params, apikey: key })}`;
 
