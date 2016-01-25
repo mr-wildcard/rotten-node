@@ -43,7 +43,8 @@ api.movie(MOVIE_ID).reviews();
 api.movie(MOVIE_ID).similar();
 api.movie(MOVIE_ID).alias();
 
-// TODO search
+// Search
+api.search(words, params, callback = null);
 ```
 
 Passing params to queries : ([available params](http://developer.rottentomatoes.com/io-docs]))
