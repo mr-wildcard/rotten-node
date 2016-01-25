@@ -9,7 +9,7 @@
     "dev": "nodemon --watch src --exec rollup -c"
   },
   "keywords": [
-    "Rottent",
+    "Rotten",
     "Tomatoes",
     "API",
     "Node.js",
