@@ -48,4 +48,14 @@ module.exports = class RottenTomatoes {
       alias:   (cb) => APICall(this.buildURL(`${slugStart}/movie_alias.json`), cb)
     }
   }
+
+  search(words, params, cb) {
+
+    const searchParams = {
+      ...params,
+      q: words
+    };
+
+    return APICall(this.buildURL('movies.json', searchParams), cb);
+  }
 }
