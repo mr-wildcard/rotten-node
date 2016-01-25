@@ -1,6 +1,6 @@
 {
   "name": "rotten-node",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A Node.js wrapper for Rotten Tomatoes API",
   "main": "lib/index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "test": "node test.js",
     "dev": "nodemon --watch src --exec rollup -c"
   },
+  "repository": "mr-wildcard/rotten-node",
   "keywords": [
     "Rotten",
     "Tomatoes",
