@@ -1,9 +1,4 @@
 import test from 'ava';
-import 'babel-core/register';
-import R from './src';
+import R from './src/main';
 
-var rt = new R();
-
-test('class R should have static method init', t => t.ok(R.init))
-test('class R static method init should be callable', t => t.true(typeof R.init === "function"))
-test('class R static method init has one argument', t => t.true(R.init.length === 1))
+test('class instanciation needs apiKey', t => t.throws(new R()));
