@@ -8,7 +8,7 @@ rollup({
     babelrc: false,
     runtimeHelpers: true,
     presets: [
-      "stage-0",
+      "stage-2",
       "es2015-rollup"
     ]
   }) ],
