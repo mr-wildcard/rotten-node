@@ -20,11 +20,23 @@ test('rt object should have a config object and a buildURL method', t => {
 test('buildEndpoint helper', t => {
 
   t.is(typeof buildEndpoint, 'function', 'buildEndpoint helper is a function');
-  t.is(typeof buildEndpoint(), 'function', 'buildEndpoint returns a clojure');
+  t.is(typeof buildEndpoint(), 'function', 'buildEndpoint returns a closure');
 
   const { buildURL } = new R(config);
   const path = 'test/api/endpoint';
-  const params = {};
+  const emptyParams = {};
+  const filledParams = {
+    limit: 15,
+    country: 'us'
+  };
+  const searchParams = {
+    ...filledParams,
+    q: 'a complexe search'
+  };
 
-  //t.is(buildURL(path, params), )
+  t.is(buildURL(path, null), `${apiBaseURL}/${path}?apikey=${apiKey}`, 'params argument has a default value');
+  t.is(buildURL(path, undefined), `${apiBaseURL}/${path}?apikey=${apiKey}`);
+  t.is(buildURL(path, emptyParams), `${apiBaseURL}/${path}?apikey=${apiKey}`);
+  t.is(buildURL(path, filledParams), `${apiBaseURL}/${path}?limit=15&country=us&apikey=${apiKey}`);
+  t.is(buildURL(path, searchParams), `${apiBaseURL}/${path}?limit=15&country=us&q=${encodeURIComponent(searchParams.q)}&apikey=${apiKey}`);
 });
