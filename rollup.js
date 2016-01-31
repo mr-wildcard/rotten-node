@@ -14,4 +14,5 @@ rollup({
   }) ],
   format: 'umd'
 })
-.then(console.log('Sources bundled !'));
+.then(console.log('Sources bundled !'))
+.catch(error => console.error('Rollup: something went wrong while bundling: %s', error));
