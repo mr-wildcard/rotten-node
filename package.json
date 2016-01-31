@@ -4,8 +4,8 @@
   "description": "A Node.js wrapper for Rotten Tomatoes API",
   "main": "lib/index.js",
   "scripts": {
-    "preinstall": "npm i -g nodemon rollup ava",
     "test": "nodemon --watch test.js --exec ava test.js",
+    "preinstall": "npm i -g nodemon ava",
     "dev": "nodemon --watch src --exec rollup -c"
   },
   "repository": "mr-wildcard/rotten-node",
