@@ -1,6 +1,6 @@
 import test from 'ava';
 import R, { apiBaseURL } from './src/main';
-import { buildEndpoint, APICall } from './src/helpers';
+import { buildEndpoint, parseResponse, APICall } from './src/helpers';
 
 const apiKey = process.env.RT_API_KEY || '';
 const config = { apiKey };
@@ -39,4 +39,28 @@ test('buildEndpoint helper', t => {
   t.is(buildURL(path, emptyParams), `${apiBaseURL}/${path}?apikey=${apiKey}`);
   t.is(buildURL(path, filledParams), `${apiBaseURL}/${path}?limit=15&country=us&apikey=${apiKey}`);
   t.is(buildURL(path, searchParams), `${apiBaseURL}/${path}?limit=15&country=us&q=${encodeURIComponent(searchParams.q)}&apikey=${apiKey}`);
+});
+
+test('parseResponse helper', t => {
+
+  const validAPIResponse = `{
+    "movie": "The Shawshank Redemption",
+    "year": 1994
+  }`;
+
+  const invalidAPIResponse = `(${validAPIResponse})`;
+
+  const objectReturnedWithError = {
+    parsingError: new SyntaxError(),
+    parsedResponse: null
+  };
+
+  const objectReturnedWithoutError = {
+    parsingError: null,
+    parsedResponse: JSON.parse(validAPIResponse)
+  };
+
+  t.doesNotThrow(() => parseResponse(invalidAPIResponse), 'it should catch JSON parsing error');
+  t.same(parseResponse(invalidAPIResponse), objectReturnedWithError, 'it should return an object with a parsingError')
+  t.same(parseResponse(validAPIResponse), objectReturnedWithoutError, 'it should return an object with a correct parsed text')
 });
