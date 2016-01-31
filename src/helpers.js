@@ -53,7 +53,7 @@ export const parseResponse = (text) => {
     parsedResponse = JSON.parse(text);
   }
   catch(e) {
-    error = e;
+    parsingError = e;
   }
 
   return { parsingError, parsedResponse };
