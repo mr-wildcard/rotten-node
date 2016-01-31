@@ -26,4 +26,5 @@ test('buildEndpoint helper', t => {
   const path = 'test/api/endpoint';
   const params = {};
 
+  //t.is(buildURL(path, params), )
 });
