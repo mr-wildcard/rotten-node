@@ -4,7 +4,7 @@
   "description": "A Node.js wrapper for Rotten Tomatoes API",
   "main": "lib/index.js",
   "scripts": {
-    "preinstall": "npm i -g nodemon ava babel-node",
+    "preinstall": "npm i -g nodemon ava babel",
     "test": "nodemon --watch tests.js --exec ava tests.js",
     "dev": "nodemon --watch src --exec babel-node rollup.js"
   },
