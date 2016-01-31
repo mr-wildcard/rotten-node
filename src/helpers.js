@@ -44,7 +44,7 @@ export const APICall = (endpoint, cb = null) => {
   }
 };
 
-const parseResponse = (text) => {
+export const parseResponse = (text) => {
 
   let parsingError = null;
   let parsedResponse = null;
