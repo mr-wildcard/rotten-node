@@ -1,10 +1,10 @@
 import { buildEndpoint, APICall } from './helpers';
 
-exports.apiBaseURL = 'http://api.rottentomatoes.com/api/public/v1.0';
+export const apiBaseURL = 'http://api.rottentomatoes.com/api/public/v1.0';
 
 const requiredConfig = () => new Error('RottentTomatoes: config object is required to instanciate class.');
 
-module.exports = class RottenTomatoes {
+export default class RottenTomatoes {
 
   constructor(config = requiredConfig()) {
 
