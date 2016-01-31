@@ -5,6 +5,7 @@ rollup({
   entry: 'src/main.js',
   dest: 'lib/index.js',
   plugins: [ babel({
+    babelrc: false,
     runtimeHelpers: true,
     presets: [
       "stage-0",
