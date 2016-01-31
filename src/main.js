@@ -1,10 +1,11 @@
 import { buildEndpoint, APICall } from './helpers';
 
 const apiBaseURL = 'http://api.rottentomatoes.com/api/public/v1.0';
+const requiredConfig = () => new Error('RottentTomatoes: config object is required to instanciate class.');
 
 module.exports = class RottenTomatoes {
 
-  constructor(config = {}) {
+  constructor(config = requiredConfig()) {
 
     if (!config.hasOwnProperty('apiKey')) {
       throw new Error('RottenTomatoes: apiKey needs to be provided.');
