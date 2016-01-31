@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "preinstall": "npm i -g nodemon ava babel-node",
-    "test": "nodemon --watch tests.js --exec ava tests.js --tap",
+    "test": "nodemon --watch tests.js --exec ava tests.js",
     "dev": "nodemon --watch src --exec babel-node rollup.js"
   },
   "repository": "mr-wildcard/rotten-node",
@@ -31,6 +31,7 @@
     "superagent": "^1.7.1"
   },
   "ava": {
-    "require": "babel-register"
+    "require": "babel-register",
+    "tap": true
   }
 }
