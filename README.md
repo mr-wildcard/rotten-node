@@ -1,5 +1,7 @@
 Simple, promise based, client for Rotten Tomatoes API.
 
+[![Build Status](https://travis-ci.org/mr-wildcard/rotten-node.svg?branch=master)](https://travis-ci.org/mr-wildcard/rotten-node)
+
 ## Installation
 ```
 $ npm i --save rotten-node
