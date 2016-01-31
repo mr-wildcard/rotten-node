@@ -7,7 +7,3 @@ install:
 
 script:
 - ava tests.js
-
-branches:
-  only:
-    - develop
