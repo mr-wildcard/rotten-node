@@ -1,6 +1,13 @@
 {
   "presets": [
-    "stage-0",
-    "es2015-rollup"
-  ]
+    "stage-2",
+    "es2015"
+  ],
+  "plugins": ["transform-runtime"],
+  "ignore": "tests.js",
+  "env": {
+    "development": {
+      "sourceMaps": "inline"
+    }
+  }
 }
