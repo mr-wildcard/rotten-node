@@ -9,14 +9,12 @@ $ npm i --save rotten-node
 
 ## Usage
 
-Each call returns a Promise :
-
 ```javascript
 import RT from 'rotten-node';
 
 var api = new RT({ apiKey: YOUR_API_KEY });
 
-api.movie(12989).infos()
+api.movie(12989).infos() // <- promise
   .then(result => console.log(result))
   .catch(error => console.error('An error occured while getting movie infos : %s', error));
 ```
