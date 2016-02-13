@@ -10,9 +10,9 @@ export const APICall = (endpoint, cb = null) => {
   if (!cb) {
     return new Promise((resolve, reject) => {
 
-      req.end((error, { text }) => {
+      req.end((error, { status, text }) => {
 
-        if (error) {
+        if (error || status !== 200) {
           reject(error);
         }
         else {
@@ -30,9 +30,9 @@ export const APICall = (endpoint, cb = null) => {
     });
   }
   else {
-    return req.end((error, { text }) => {
+    req.end((error, { text }) => {
 
-      if (error) {
+      if (error || status !== 200) {
         cb(error);
       }
       else {
