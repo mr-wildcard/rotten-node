@@ -64,3 +64,27 @@ test('parseResponse helper', t => {
   t.same(parseResponse(invalidAPIResponse), objectReturnedWithError, 'it should return an object with a parsingError')
   t.same(parseResponse(validAPIResponse), objectReturnedWithoutError, 'it should return an object with a correct parsed text')
 });
+
+test('APICall helper promise', t => {
+
+  const { buildURL } = new R(config);
+  const path = 'test/api/endpoint';
+  const builtURL = buildURL(path);
+  const apiCallPromise = APICall(builtURL);
+
+  t.ok(apiCallPromise.then)
+  t.throws(apiCallPromise);
+});
+
+test.cb('APICall helper callback', t => {
+
+  const { buildURL } = new R(config);
+  const path = 'test/api/endpoint';
+  const builtURL = buildURL(path);
+
+  APICall(builtURL, (error, result) => {
+    t.ok(error);
+    t.same(result, undefined);
+    t.end();
+  });
+});
