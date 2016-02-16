@@ -4,6 +4,8 @@ import { buildEndpoint, parseResponse, APICall } from './src/helpers';
 
 const apiKey = process.env.RT_API_KEY || '';
 const config = { apiKey };
+const wrongPath = 'test/api/endpoint';
+const correctPath = 'lists/dvds/top_rentals.json';
 
 test('class instanciation fails without config', t => t.throws(() => new R()));
 test('class instanciation fails without apiKey', t => t.throws(() => new R({})));
@@ -68,23 +70,46 @@ test('parseResponse helper', t => {
 test('APICall helper promise', t => {
 
   const { buildURL } = new R(config);
-  const path = 'test/api/endpoint';
-  const builtURL = buildURL(path);
-  const apiCallPromise = APICall(builtURL);
 
-  t.ok(apiCallPromise.then)
-  t.throws(apiCallPromise);
+  t.throws(APICall(buildURL(wrongPath)));
+  t.doesNotThrow(APICall(buildURL(correctPath)));
 });
 
-test.cb('APICall helper callback', t => {
+test.cb('APICall helper callback error', t => {
 
   const { buildURL } = new R(config);
-  const path = 'test/api/endpoint';
-  const builtURL = buildURL(path);
 
-  APICall(builtURL, (error, result) => {
+  APICall(buildURL(wrongPath), (error, result) => {
     t.ok(error);
     t.same(result, undefined);
     t.end();
   });
 });
+
+test.cb('APICall helper callback success', t => {
+
+  const { buildURL } = new R(config);
+
+  APICall(buildURL(correctPath), (error, result) => {
+    t.same(error, null);
+    t.ok(result);
+    t.end();
+  });
+});
+
+/*
+test('Available \'lists\' endpoints', t => {
+
+  const { lists } = new R(config);
+
+  console.log(lists);
+  t.ok(lists);
+  t.same(
+    lists,
+    {
+      movies: {},
+      dvds: {}
+    }
+  );
+});
+*/
