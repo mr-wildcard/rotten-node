@@ -47,7 +47,7 @@ api.movie(MOVIE_ID).alias();
 api.search(words, params, callback = null);
 ```
 
-Passing params to queries : ([available params](http://developer.rottentomatoes.com/io-docs]))
+Passing params to queries : ([available params](http://developer.rottentomatoes.com/io-docs))
 ```javascript
 api.lists.movies.boxOffice({
   limit: 16,
