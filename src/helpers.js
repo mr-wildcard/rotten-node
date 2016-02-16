@@ -30,7 +30,7 @@ export const APICall = (endpoint, cb = null) => {
     });
   }
   else {
-    req.end((error, { text }) => {
+    req.end((error, { status, text }) => {
 
       if (error || status !== 200) {
         cb(error);
