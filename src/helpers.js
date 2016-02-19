@@ -33,7 +33,7 @@ export const APICall = (endpoint, cb = null) => {
     req.end((error, { status, text }) => {
 
       if (error || status !== 200) {
-        cb(error || new Error('Content couldn\'t be .'));
+        cb(error || new Error('Content couldn\'t be retrieved.'));
       }
       else {
         const { parsingError, parsedResponse } = parseResponse(text);
