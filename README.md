@@ -34,14 +34,14 @@ api.lists.dvds.newReleases();
 api.lists.dvds.upcoming();
 
 // Movie infos
-const MOVIE_ID = 12989;
+const movieRequest = api.movie(MOVIE_ID);
 
-api.movie(MOVIE_ID).infos();
-api.movie(MOVIE_ID).cast();
-api.movie(MOVIE_ID).clips();
-api.movie(MOVIE_ID).reviews();
-api.movie(MOVIE_ID).similar();
-api.movie(MOVIE_ID).alias();
+movieRequest.infos();
+movieRequest.cast();
+movieRequest.clips();
+movieRequest.reviews();
+movieRequest.similar();
+movieRequest.alias();
 
 // Search
 api.search(words, params, callback = null);
