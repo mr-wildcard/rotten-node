@@ -1,9 +1,13 @@
+sudo: false
+
 language: node_js
+
 node_js:
-- '4.2.6'
+  - 6
+  - 4
 
 install:
-- npm i
+  - npm install
 
 script:
-- ava tests.js
+  - ava tests.js
