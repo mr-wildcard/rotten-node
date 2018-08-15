@@ -1,10 +1,6 @@
 {
-  "presets": [
-    "stage-2",
-    "es2015"
-  ],
-  "plugins": ["transform-runtime"],
-  "ignore": "tests.js",
+  "presets": [["env", { "modules": false }]],
+  "plugins": ["external-helpers", "transform-object-rest-spread"],
   "env": {
     "development": {
       "sourceMaps": "inline"

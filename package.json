@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "nodemon --watch tests.js --exec ava tests.js",
-    "dev": "nodemon --watch src --exec babel-node rollup.js",
-    "build": "babel-node rollup.js"
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
   },
   "repository": "mr-wildcard/rotten-node",
   "keywords": [
