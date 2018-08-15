@@ -3,6 +3,13 @@ Simple, promise based, client for Rotten Tomatoes API.
 [![Build Status](https://travis-ci.org/mr-wildcard/rotten-node.svg?branch=master)](https://travis-ci.org/mr-wildcard/rotten-node)
 
 ## Installation
+
+Using Yarn :
+```
+$ yarn add rotten-node
+```
+
+Or npm :
 ```
 $ npm i --save rotten-node
 ```
@@ -64,5 +71,15 @@ api.lists.movies.boxOffice(null, function(error, result) {
 
 ## Develop
 ```
-$ npm run dev
+$ yarn dev
+```
+
+## Build
+```
+$ yarn build
+```
+
+## Test
+```
+$ yarn test
 ```

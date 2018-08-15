@@ -5,7 +5,7 @@ export const buildEndpoint = (baseUrl, key) => (path, params = {}) => `${baseUrl
 
 export const APICall = (endpoint, cb = null) => {
 
-  var req = http.get(endpoint);
+  const req = http.get(endpoint);
 
   if (!cb) {
     return new Promise((resolve, reject) => {
@@ -57,4 +57,4 @@ export const parseResponse = (text) => {
   }
 
   return { parsingError, parsedResponse };
-}
+};
