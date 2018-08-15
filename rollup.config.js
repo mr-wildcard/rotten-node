@@ -12,7 +12,12 @@ export default {
   external: ['superagent', 'querystring'],
   plugins: [
     nodeResolve({ preferBuiltins: true }),
-    babel()
+    babel({
+      babelrc: false,
+      exclude: 'node_modules/**',
+      presets: [["env", { "modules": false }]],
+      plugins: ["external-helpers", "transform-object-rest-spread"]
+    })
   ],
   watch: {
     include: 'src/**',

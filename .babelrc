@@ -1,9 +1,11 @@
 {
-  "presets": [["env", { "modules": false }]],
-  "plugins": ["external-helpers", "transform-object-rest-spread"],
+  "plugins": ["transform-object-rest-spread"],
   "env": {
     "development": {
       "sourceMaps": "inline"
+    },
+    "test": {
+      "presets": [["env"]]
     }
   }
 }
