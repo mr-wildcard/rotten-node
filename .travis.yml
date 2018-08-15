@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- '4.2.6'
+- '8.11.3'
 
 install:
-- npm i
+- yarn --pure-lockfile
 
 script:
-- ava tests.js
+- yarn jest tests/
